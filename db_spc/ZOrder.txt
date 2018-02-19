@@ -1,0 +1,17 @@
+No dependencies:
+tblProgram
+tblCompany
+tblJobProfile
+tblPlacementSeason
+
+Dependencies:
+tblUser
+tblAreaOfInterest
+tblCompanyProfile
+tblJobOpening
+tblProgramOpening <---- One problem to solve
+tblJobOpeningRegistration
+tblPlacedStudent
+tblDreamCompany
+
+tblResume
