@@ -22,3 +22,4 @@ tblMessageTemplate
 tblAllTags
 tblQuestion
 tblQuestionTag
+tblCompanyQuestion
