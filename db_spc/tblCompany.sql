@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS tblCompany (
     company_Website varchar(40),
     company_Information TEXT,
     company_IsActive bool NOT NULL DEFAULT 0,
-        -- 0=Active; 1=Not active
+        -- 1=Active; 2=Not active
+    -- company_IsApproved boolean,
     PRIMARY KEY (company_Id)
 );

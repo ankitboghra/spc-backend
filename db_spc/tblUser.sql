@@ -4,7 +4,7 @@
 CREATE TABLE IF NOT EXISTS tblUser (
     user_StudentId varchar(9) NOT NULL,
     user_TypeFlag int NOT NULL,
-        -- 1=admin; 2=student; 3=spcMember; 4=spcMember+student;
+        -- 1=admin; 2=student; 4=spcMember; 6=spcMember+student;
     user_FirstName varchar(60) NOT NULL,
     user_MiddleName varchar(60),
     user_LastName varchar(60),
@@ -30,10 +30,10 @@ CREATE TABLE IF NOT EXISTS tblUser (
     user_TotalBacklog int NOT NULL DEFAULT 0,
     user_IsPlaced boolean NOT NULL,
     user_IsInterested boolean NOT NULL DEFAULT 0,
-        -- 0=Interested; 1=Not Interested
+        -- 1=Interested; 2=Not Interested
         -- Keep it or not ?
     user_IsActive boolean NOT NULL DEFAULT 0,
-        -- 0=Active; 1=Not Active
+        -- 1=Active; 2=Not Active
     
     FOREIGN KEY (user_ProgramId) REFERENCES tblProgram(program_Id),
     PRIMARY KEY (user_StudentId)
