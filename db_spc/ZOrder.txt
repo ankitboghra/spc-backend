@@ -13,6 +13,9 @@ tblProgramOpening <---- One problem to solve
 tblJobOpeningRegistration
 tblPlacedStudent
 tblDreamCompany
+tblInterviewExperience
+tblInterviewRound
+tblInterviewRoundDetail
 
 tblResume
 tblNotification
@@ -23,3 +26,8 @@ tblAllTags
 tblQuestion
 tblQuestionTag
 tblCompanyQuestion
+tblStudentProgress
+
+tblPasswordReset
+
+tblPolicy
