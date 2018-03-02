@@ -30,4 +30,4 @@ tblStudentProgress
 
 tblPasswordReset
 
-tblPolicy
+tblSpcPolicy

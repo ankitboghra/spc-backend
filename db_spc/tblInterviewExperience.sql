@@ -1,7 +1,7 @@
 -- dependency on
 --  tblUser
 
-CREATE TABLE IF NOT EXISTS tblIntervieExperience (
+CREATE TABLE IF NOT EXISTS tblInterviewExperience (
     -- interviewExperience_Id INT NOT NULL AUTO_INCREMENT,
     interviewExperience_StudentId varchar(9) NOT NULL,
     interviewExperience_OpeningId int,
