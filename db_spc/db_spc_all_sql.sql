@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS tblUser (
     user_JoinDate date NOT NULL,
     user_SscYear year(4),
     user_HscYear year(4),
-    user_QualifyingBoard decimal(5,2),
+    user_QualifyingBoard varchar(255),
     user_QualifyingPercentage decimal(5,2),
     user_QualifyingDegree varchar(60),
     user_Stream varchar(60),
