@@ -23,7 +23,7 @@ router.get('/:id?', function (req, res, next) {
       if (err) {
         res.json(err);
       }
-      elses {
+      else {
         res.json(rows);
       }
 

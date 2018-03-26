@@ -17,6 +17,10 @@ var sprofile = require('./routes/studentProfile');
 var question = require('./routes/question');
 var placedstudent = require('./routes/placedstudent');
 var interviewexperience = require('./routes/interviewexperience');
+// var interviewround = require('./routes/interviewround');
+// var interviewrounddetail = require('./routes/interviewrounddetail');
+
+
 
 var app = express();
 
@@ -44,6 +48,8 @@ app.use('/studentProfile', sprofile);
 app.use('/question', question);
 app.use('/placedstudent', placedstudent);
 app.use('/interviewexperience', interviewexperience);
+// app.use('/interviewround', interviewround);
+// app.use('/interviewrounddetail', interviewrounddetail);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
