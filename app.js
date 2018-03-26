@@ -15,6 +15,8 @@ var changePassword = require('./routes/changePassword');
 var company = require('./routes/company');
 var sprofile = require('./routes/studentProfile');
 var question = require('./routes/question');
+var placedstudent = require('./routes/placedstudent');
+var interviewexperience = require('./routes/interviewexperience');
 
 var app = express();
 
@@ -40,6 +42,8 @@ app.use('/changePassword', changePassword);
 app.use('/company',company);
 app.use('/studentProfile',sprofile);
 app.use('/question',question);
+app.use('/placedstudent',placedstudent);
+app.use('/interviewexperience',interviewexperience);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

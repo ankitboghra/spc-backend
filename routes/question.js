@@ -47,7 +47,7 @@ router.post('/', function (req, res, next) {
 
 router.delete('/:id', function (req, res, next) {
 
-    prog.deleteprog(req.params.id, function (err, count) {
+    que.deleteprog(req.params.id, function (err, count) {
 
         if (err) {
             res.json(err);
@@ -60,7 +60,7 @@ router.delete('/:id', function (req, res, next) {
 });
 router.put('/:id', function (req, res, next) {
 
-    prog.updateprog(req.params.id, req.body, function (err, rows) {
+    que.updateprog(req.params.id, req.body, function (err, rows) {
 
         if (err) {
             res.json(err);
