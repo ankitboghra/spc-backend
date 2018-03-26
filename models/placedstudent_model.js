@@ -25,4 +25,4 @@ var pst = {
             [ques.question_Title, ques.question_Description, ques.question_Solution, ques.question_DifficultyLevel, ques.question_IsActive, ques.question_CreatorUserId, ques.question_ApprovedByUserId, id], callback);
     }
 };
-module.exports =pst;
+module.exports = pst;
