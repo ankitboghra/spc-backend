@@ -2,27 +2,28 @@ var db = require('../dbconnection'); //reference of dbconnection.js
 
 var pst = {
 
-    getAllstudent: function (callback) {
+    getAllPlacedStudent: function (callback) {
 
-        return db.query("Select * from tblPlacedStudent", callback);
+        return db.query("select * from tblPlacedStudent", callback);
 
     },
-    getByOpeningIdStudentId: function (id, callback) {
+    getByOpeningIdStudentId: function (oid, sid, callback) {
 
-        return db.query("select * from tblQuestion where question_Id=?", [id], callback);
+        return db.query("select * from tblPlacedStudent where placedStudent_OpeningId=? and placedStudent_StudentId=?", [oid, sid], callback);
     },
     addPlacedStudent: function (ques, callback) {
 
-        return db.query("INSERT INTO tblQuestion (question_Id, question_Title,question_Description,question_Solution,question_DifficultyLevel,question_IsActive,question_CreatorUserId,question_ApprovedByUserId) VALUES (NULL, ?,?,?,?,?,?,?)",
-            [ques.question_Title, ques.question_Description, ques.question_Solution, ques.question_DifficultyLevel, ques.question_IsActive, ques.question_CreatorUserId, ques.question_ApprovedByUserId], callback);
+        return db.query("INSERT INTO `tblPlacedStudent`(`placedStudent_OpeningId`, `placedStudent_StudentId`, `placedStudent_PackageOffered`, `placedStudent_DateOfOffer`, `placedStudent_Position`, `placedStudent_IsPpoOffered`, `placedStudent_IsOfferAccepted`) VALUES (?,?,?,?,?,?,?)",
+            [pst.placedStudent_OpeningId, pst.placedStudent_StudentId, pst.placedStudent_PackageOffered, pst.placedStudent_DateOfOffer, pst.placedStudent_Position, pst.placedStudent_IsPpoOffered, pst.placedStudent_IsOfferAccepted], callback);
+            
     },
-    deletePlacedStudent: function (id, callback) {
-        return db.query("delete from tblQuestion where question_Id=?", [id], callback);
+    deletePlacedStudent: function (oid, sid, callback) {
+        return db.query("delete from tblPlacedStudent where placedStudent_OpeningId=? and placedStudent_StudentId=?", [oid, sid], callback);
     },
 
     updatePlacedStudent: function (id, prog, callback) {
-        return db.query("update tblQuestion set question_Title=?,question_Description=?,question_Solution=?,question_DifficultyLevel=?,question_IsActive=?,question_CreatorUserId=?,question_ApprovedByUserId=? where question_Id=?",
-            [ques.question_Title, ques.question_Description, ques.question_Solution, ques.question_DifficultyLevel, ques.question_IsActive, ques.question_CreatorUserId, ques.question_ApprovedByUserId, id], callback);
+        return db.query("update tblPlacedStudent set `placedStudent_PackageOffered`=?, `placedStudent_DateOfOffer`=?, `placedStudent_Position`=?, `placedStudent_IsPpoOffered`=?, `placedStudent_IsOfferAccepted`=?  where `placedStudent_OpeningId`=?, `placedStudent_StudentId`=?",
+        [pst.placedStudent_PackageOffered, pst.placedStudent_DateOfOffer, pst.placedStudent_Position, pst.placedStudent_IsPpoOffered, pst.placedStudent_IsOfferAccepted, pst.placedStudent_OpeningId, pst.placedStudent_StudentId], callback);
     }
 };
 module.exports = pst;

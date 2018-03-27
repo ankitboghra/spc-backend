@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var pst = require('../models/placedstudent_model');
+console.log("Requestttt received..");
 
-// router.get('/:oid/:sid', function (req, res, next) {
 router.get('/:oid?/:sid?', function (req, res, next) {
-
+    console.log("Request received..");
     if (req.params.oid && req.params.sid) {
-
-        pst.getByOpeningIdStudentId.getQueById(req.params.oid, req.params.sid, function (err, rows) {
+        console.log("First part..");
+        pst.getByOpeningIdStudentId(req.params.oid, req.params.sid, function (err, rows) {
 
             if (err) {
                 res.json(err);
@@ -16,10 +16,11 @@ router.get('/:oid?/:sid?', function (req, res, next) {
                 res.json(rows);
             }
         });
+        console.log("First part success..");
     }
     else {
-
-        pst.getAllstudent(function (err, rows) {
+        console.log("Second part..");
+        pst.getAllPlacedStudent(function (err, rows) {
 
             if (err) {
                 res.json(err);
@@ -46,7 +47,7 @@ router.post('/', function (req, res, next) {
     });
 });
 
-router.delete('/:oid?/:sid?', function (req, res, next) {
+router.delete('/:oid/:sid', function (req, res, next) {
 
     pst.deletePlacedStudent(req.params.oid, req.params.sid, function (err, count) {
 
@@ -59,7 +60,7 @@ router.delete('/:oid?/:sid?', function (req, res, next) {
 
     });
 });
-router.put('/:oid?/:sid?', function (req, res, next) {
+router.put('/:oid/:sid', function (req, res, next) {
 
     pst.updatePlacedStudent(req.params.oid, req.params.sid, function (err, rows) {
 
