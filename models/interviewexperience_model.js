@@ -4,14 +4,14 @@ var ie = {
 
     getAllExperience: function (callback) {
 
-        return db.query("select * from tblInterviewExperience", callback);
+        return db.query("SELECT * FROM `tblinterviewexperience`", callback);
 
     },
     getExperienceBySidOid: function (oid, sid, callback) {
 
-        return db.query("select * from tblInterviewExperience where interviewExperience_OpeningId=? and interviewExperience_StudentId=?", [oid, sid], callback);
+        return db.query("SELECT * FROM `tblinterviewexperience` WHERE interviewExperience_OpeningId=? AND interviewExperience_StudentId=?", [oid, sid], callback);
     },
-    addInterviewExperience: function (ques, callback) {
+    addInterviewExperience: function (ie, callback) {
 
         return db.query("INSERT INTO `tblinterviewexperience`(`interviewExperience_StudentId`, `interviewExperience_OpeningId`, `interviewExperience_Description`, `interviewExperience_ApprovedBy`, `interviewExperience_Time`) VALUES (?,?,?,?,?)",
             [ie.interviewExperience_StudentId, ie.interviewExperience_OpeningId, ie.interviewExperience_Description, ie.interviewExperience_ApprovedBy, ie.interviewExperience_Time], callback);

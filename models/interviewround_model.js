@@ -22,7 +22,7 @@ var ir = {
 
     updateRound: function (id, callback) {
         return db.query("UPDATE `tblinterviewround` SET `interviewRound_JobOpeningId`=?,`interviewRound_RoundNumber`=?,`interviewRound_Description`=?,`interviewRound_Timestamp`=? WHERE interviewRound_Id=?",
-        [ir.interviewRound_JobOpeningId, ir.interviewRound_RoundNumber, ir.interviewRound_Description, ir.interviewRound_Timestamp, id], callback);
+            [ir.interviewRound_JobOpeningId, ir.interviewRound_RoundNumber, ir.interviewRound_Description, ir.interviewRound_Timestamp, id], callback);
     }
 };
 module.exports = ir;
