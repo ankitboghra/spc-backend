@@ -404,7 +404,7 @@ CREATE TABLE IF NOT EXISTS tblQuestion (
     question_Solution TEXT,
     question_DifficultyLevel int,
         -- 1=Easy; 2=Medium; 3=Hard;
-    question_IsActive boolean DEFAULT TRUE,
+    question_IsActive boolean DEFAULT TRUE NOT NULL,
     question_CreatorUserId varchar(9) NOT NULL,
     question_ApprovedByUserId varchar(9),
 
