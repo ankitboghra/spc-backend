@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS tblQuestion (
         -- 1=Easy; 2=Medium; 3=Hard;
     question_IsActive boolean DEFAULT TRUE,
     question_CreatorUserId varchar(9) NOT NULL,
-    question_ApprovedByUserId varchar(9) NOT NULL,
+    question_ApprovedByUserId varchar(9),
 
     FOREIGN KEY (question_CreatorUserId) REFERENCES tblUser(user_StudentId),
     FOREIGN KEY (question_ApprovedByUserId) REFERENCES tblUser(user_StudentId),
