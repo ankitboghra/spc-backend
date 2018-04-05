@@ -476,7 +476,7 @@ CREATE TABLE IF NOT EXISTS tblSpcPolicy (
         -- 1=Category 1; 2=Category 2; 4=Switch; ...
     spcPolicy_Minimum DECIMAL(11,2),
     spcPolicy_Maximum DECIMAL(11,2),
-    -- spcPolicy_SwitchAllowed INT,
+    spcPolicy_SwitchAllowed boolean,
     spcPolicy_Multiplier DECIMAL(4,2),
     spcPolicy_Description VARCHAR(255),
     FOREIGN KEY (spcPolicy_PlacementSeasonId) REFERENCES tblPlacementSeason(placementSeason_Id),
