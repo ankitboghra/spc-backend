@@ -148,6 +148,7 @@ CREATE TABLE IF NOT EXISTS tblAreaOfInterest (
     FOREIGN KEY (areaOfInterest_JobProfileId) REFERENCES tblJobProfile(jobProfile_Id)   
 );
 
+
 -- ____tblCompanyJobProfile_________________________________________________________
 -- Dependency on
 --  tblCompany
@@ -376,11 +377,11 @@ CREATE TABLE IF NOT EXISTS tblNotificationRecipient (
 --  tblUser
 
 CREATE TABLE IF NOT EXISTS tblMessageTemplate (
-    -- tblMessageTemplate_Id INT NOT NULL AUTO_INCREMENT,
+    messageTemplate_Id INT NOT NULL AUTO_INCREMENT,
     messageTemplate_UserId VARCHAR(9) NOT NULL,
     messageTemplate_MessageContent TEXT,
     FOREIGN KEY (messageTemplate_UserId) REFERENCES tblUser(user_StudentId),
-    PRIMARY KEY (messageTemplate_UserId)
+    PRIMARY KEY (messageTemplate_Id)
 );
 
 -- ____tblAllTags_________________________________________________________
@@ -423,6 +424,11 @@ CREATE TABLE IF NOT EXISTS tblQuestionTag (
     FOREIGN KEY (questionTag_QuestionId) REFERENCES tblQuestion(question_Id),
     FOREIGN KEY (questionTag_TagId) REFERENCES tblAllTags(allTags_Id)
 );
+
+-- Alteration
+ALTER TABLE `tblquestiontag`
+  ADD CONSTRAINT `tblquestiontag_ibfk_3` FOREIGN KEY (`questionTag_QuestionId`) REFERENCES `tblquestion` (`question_Id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `tblquestiontag_ibfk_4` FOREIGN KEY (`questionTag_TagId`) REFERENCES `tblalltags` (`allTags_Id`) ON DELETE CASCADE
 
 -- ____tblCompanyQuestion_________________________________________________________
 -- Dependency on
